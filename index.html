@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#09001f"
+    >
+
+    <title>Confirmação de Presença</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<main class="page-wrapper">
+
+    <section class="card">
+
+        <div class="rocket">
+            🚀
+        </div>
+
+        <p class="mission-label">
+            MISSÃO ESPECIAL
+        </p>
+
+        <h1>
+            Confirme sua presença
+        </h1>
+
+        <p class="subtitle">
+            Você foi convocado para uma aventura intergaláctica!
+            Confirme sua participação na missão.
+        </p>
+
+
+        <div class="event-info">
+
+            <div class="event-item">
+                <span>📅</span>
+
+                <div>
+                    <small>DATA</small>
+                    <strong id="festaData"></strong>
+                </div>
+            </div>
+
+
+            <div class="event-item">
+                <span>⏰</span>
+
+                <div>
+                    <small>HORÁRIO</small>
+                    <strong id="festaHorario"></strong>
+                </div>
+            </div>
+
+
+            <div class="event-item">
+                <span>📍</span>
+
+                <div>
+                    <small>LOCAL</small>
+                    <strong id="festaEndereco"></strong>
+                </div>
+            </div>
+
+        </div>
+
+
+        <form id="formConfirmacao">
+
+            <div class="form-group">
+
+                <label for="nome">
+                    Seu nome
+                </label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    maxlength="100"
+                    placeholder="Digite seu nome"
+                    autocomplete="name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="acompanhantes">
+                    Quantos acompanhantes?
+                </label>
+
+                <select id="acompanhantes">
+
+                    <option value="0">
+                        Somente eu
+                    </option>
+
+                    <option value="1">
+                        + 1 acompanhante
+                    </option>
+
+                    <option value="2">
+                        + 2 acompanhantes
+                    </option>
+
+                    <option value="3">
+                        + 3 acompanhantes
+                    </option>
+
+                    <option value="4">
+                        + 4 acompanhantes
+                    </option>
+
+                    <option value="5">
+                        + 5 acompanhantes
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div
+                class="form-group"
+                id="grupoNomesAcompanhantes"
+                style="display:none"
+            >
+
+                <label for="nomesAcompanhantes">
+                    Nome dos acompanhantes
+                </label>
+
+                <textarea
+                    id="nomesAcompanhantes"
+                    maxlength="500"
+                    rows="3"
+                    placeholder="Ex.: Maria, João..."
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="telefone">
+                    Telefone
+                    <span class="optional">
+                        (opcional)
+                    </span>
+                </label>
+
+                <input
+                    type="tel"
+                    id="telefone"
+                    maxlength="30"
+                    placeholder="(11) 99999-9999"
+                    autocomplete="tel"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="observacao">
+                    Mensagem
+                    <span class="optional">
+                        (opcional)
+                    </span>
+                </label>
+
+                <textarea
+                    id="observacao"
+                    maxlength="500"
+                    rows="3"
+                    placeholder="Deixe uma mensagem para o anfitrião..."
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                id="btnConfirmar"
+                class="primary-button"
+            >
+                🚀 CONFIRMAR PRESENÇA
+            </button>
+
+        </form>
+
+
+        <div
+            id="status"
+            class="status"
+        ></div>
+
+
+        <div
+            id="sucesso"
+            class="success-screen"
+        >
+
+            <div class="success-icon">
+                ✅
+            </div>
+
+            <h2>
+                Missão aceita!
+            </h2>
+
+            <p>
+                Sua presença foi registrada com sucesso.
+            </p>
+
+            <div class="success-date">
+                🚀 Nos vemos em
+                <strong id="sucessoData"></strong>
+                às
+                <strong id="sucessoHorario"></strong>!
+            </div>
+
+        </div>
+
+
+        <footer>
+
+            <span>
+                ✦
+            </span>
+
+            CONTAMOS COM VOCÊ NESTA MISSÃO
+
+            <span>
+                ✦
+            </span>
+
+        </footer>
+
+    </section>
+
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="config.js"></script>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
