@@ -667,3 +667,66 @@ tbody tr:hover {
     }
 
 }
+
+.countdown {
+margin: 25px 0;
+padding: 18px;
+border: 1px solid rgba(255, 255, 255, 0.15);
+border-radius: 12px;
+background: rgba(0, 0, 0, 0.15);
+text-align: center;
+}
+
+.countdown-title {
+margin: 0 0 15px;
+font-size: 13px;
+font-weight: bold;
+letter-spacing: 2px;
+color: #c9b8ff;
+}
+
+.countdown-values {
+display: flex;
+justify-content: center;
+gap: 10px;
+}
+
+.countdown-item {
+min-width: 65px;
+}
+
+.countdown-item strong {
+display: block;
+font-size: 28px;
+line-height: 1;
+color: #ffffff;
+}
+
+.countdown-item span {
+display: block;
+margin-top: 7px;
+font-size: 9px;
+letter-spacing: 1px;
+color: #aaa4c5;
+}
+
+@media (max-width: 400px) {
+
+.countdown-values {
+    gap: 5px;
+}
+
+.countdown-item {
+    min-width: 58px;
+}
+
+.countdown-item strong {
+    font-size: 23px;
+}
+
+.countdown-item span {
+    font-size: 8px;
+}
+
+
+}

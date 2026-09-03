@@ -285,3 +285,92 @@ function limparStatus() {
         "none";
 
 }
+
+function iniciarContador() {
+
+const hoje = new Date();
+
+let anoEvento = hoje.getFullYear();
+
+// 07 de setembro às 16:00
+let dataEvento = new Date(
+    anoEvento,
+    8, // Setembro (Janeiro = 0)
+    7,
+    16,
+    0,
+    0
+);
+
+// Se o evento deste ano já passou,
+// usa 07/09 do próximo ano.
+if (hoje >= dataEvento) {
+    anoEvento++;
+    
+    dataEvento = new Date(
+        anoEvento,
+        8,
+        7,
+        16,
+        0,
+        0
+    );
+}
+
+function atualizarContador() {
+
+    const agora = new Date();
+
+    // Se chegou ao evento, recalcula para o próximo ano.
+    if (agora >= dataEvento) {
+        anoEvento++;
+
+        dataEvento = new Date(
+            anoEvento,
+            8,
+            7,
+            16,
+            0,
+            0
+        );
+    }
+
+    const diferenca = dataEvento - agora;
+
+    const dias = Math.floor(
+        diferenca / (1000 * 60 * 60 * 24)
+    );
+
+    const horas = Math.floor(
+        (diferenca / (1000 * 60 * 60)) % 24
+    );
+
+    const minutos = Math.floor(
+        (diferenca / (1000 * 60)) % 60
+    );
+
+    const segundos = Math.floor(
+        (diferenca / 1000) % 60
+    );
+
+    document.getElementById('contadorDias').textContent =
+        String(dias).padStart(2, '0');
+
+    document.getElementById('contadorHoras').textContent =
+        String(horas).padStart(2, '0');
+
+    document.getElementById('contadorMinutos').textContent =
+        String(minutos).padStart(2, '0');
+
+    document.getElementById('contadorSegundos').textContent =
+        String(segundos).padStart(2, '0');
+}
+
+atualizarContador();
+
+setInterval(atualizarContador, 1000);
+
+
+}
+
+iniciarContador();
